@@ -6,6 +6,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": true,
+      "launchUrl": "scalar/v1",
       "applicationUrl": "http://localhost:5262"
     },
     "https": {
@@ -14,6 +15,7 @@
         "ASPNETCORE_ENVIRONMENT": "Development"
       },
       "dotnetRunMessages": true,
+      "launchUrl": "scalar/v1",
       "applicationUrl": "https://localhost:7075;http://localhost:5262"
     },
     "Container (Dockerfile)": {
@@ -29,6 +31,7 @@
     "IIS Express": {
       "commandName": "IISExpress",
       "launchBrowser": true,
+      "launchUrl": "scalar/v1",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
