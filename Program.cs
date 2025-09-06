@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using RecipeBook_API.Domain.Infrastructure;
+using RecipeBook_API.Mapping;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -7,6 +8,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddOpenApi();
+
+builder.Services.AddAutoMapper(cfg => { }, typeof(MappingProfile));
 
 builder.Services.AddDbContext<AppDbContext>(o =>
     o.UseSqlite(builder.Configuration.GetConnectionString("Default") ?? "Data Source=recipebook.db"));
