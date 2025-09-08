@@ -1,6 +1,8 @@
+using FluentValidation;
 using Microsoft.EntityFrameworkCore;
 using RecipeBook_API.Domain.Infrastructure;
 using RecipeBook_API.Mapping;
+using RecipeBook_API.Validation;
 using Scalar.AspNetCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,6 +12,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddOpenApi();
 
 builder.Services.AddAutoMapper(cfg => { }, typeof(MappingProfile));
+builder.Services.AddValidatorsFromAssemblyContaining<RecipeValidator>();
 
 builder.Services.AddDbContext<AppDbContext>(o =>
     o.UseSqlite(builder.Configuration.GetConnectionString("Default") ?? "Data Source=recipebook.db"));
