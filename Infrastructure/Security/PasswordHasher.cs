@@ -5,7 +5,7 @@ namespace RecipeBook_API.Infrastructure.Security
 {
     public class PasswordHasher
     {
-        public static string HashPassword(string password)
+        public static string Hash(string password)
         {
             var salt = RandomNumberGenerator.GetBytes(16);
             var hash = KeyDerivation.Pbkdf2(

@@ -9,4 +9,3 @@ namespace RecipeBook_API.Application.Abstraction
         Task<(string accessToken, DateTimeOffset expires)> LoginAsync(LoginRequest req);
     }
 }
-}
