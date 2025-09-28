@@ -42,6 +42,9 @@ builder.Services.AddAuthorization();
 builder.Services.AddSingleton<IJwtTokenService>(new JwtTokenService(signingKey));
 builder.Services.AddScoped<IAuthService, AuthService>();
 
+builder.Services.AddScoped<IRecipeService, RecipeService>();
+builder.Services.AddValidatorsFromAssemblyContaining<RecipeValidator>();
+
 builder.Services.AddDbContext<AppDbContext>(o =>
     o.UseSqlite(builder.Configuration.GetConnectionString("Default") ?? "Data Source=recipebook.db"));
 
